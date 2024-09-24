@@ -1,6 +1,6 @@
 Projeto OS Connect 
 
-Criadores/ Idealizadores : João dos sanos cavalca, João Pedro do Nascimento Antonio
+Criadores/ Idealizadores : João dos santos cavalca, João Pedro do Nascimento Antonio
 
 
 Projeto focado na criação de um website para a facilitação de contato entre prestador de serviço e cliente 
