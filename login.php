@@ -68,6 +68,7 @@ if ($conn->connect_error) {
     }
 
     .form-wrapper {
+      margin-top: 2.5rem;
       width: 100%;
       max-width: 28rem;
     }
@@ -363,6 +364,10 @@ if ($conn->connect_error) {
             text-shadow: -10ch 0 0 #000, 0 0 0 #000
         }
     }
+
+    .name{
+      display: flex;
+    }
   </style>
 </head>
 
@@ -383,8 +388,9 @@ if ($conn->connect_error) {
       <div class="col align-items-center flex-col sign-up">
         <div class="form-wrapper align-items-center">
           <form class="form sign-up" action="inserir.php" method="post">
-            <div class="input-group">
+            <div class="input-group d-flex" style="gap: 16px">
               <input type="text" placeholder="Nome" name="nome" required />
+              <input type="text" placeholder="sobrenome" id="sobrenome" name="sobrenome" require>
             </div>
             <div class="input-group">
               <input type="email" placeholder="Email" name="email" required />
