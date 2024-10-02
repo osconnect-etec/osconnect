@@ -1,4 +1,5 @@
 <?php
+session_start();
 $servername = "br612.hostgator.com.br";
 $username = "hubsap45_usrordserv";
 $password = "j@j!1502";
@@ -68,7 +69,6 @@ if ($conn->connect_error) {
     }
 
     .form-wrapper {
-      margin-top: 2.5rem;
       width: 100%;
       max-width: 28rem;
     }
@@ -364,10 +364,6 @@ if ($conn->connect_error) {
             text-shadow: -10ch 0 0 #000, 0 0 0 #000
         }
     }
-
-    .name{
-      display: flex;
-    }
   </style>
 </head>
 
@@ -388,9 +384,8 @@ if ($conn->connect_error) {
       <div class="col align-items-center flex-col sign-up">
         <div class="form-wrapper align-items-center">
           <form class="form sign-up" action="inserir.php" method="post">
-            <div class="input-group d-flex" style="gap: 16px">
+            <div class="input-group">
               <input type="text" placeholder="Nome" name="nome" required />
-              <input type="text" placeholder="sobrenome" id="sobrenome" name="sobrenome" require>
             </div>
             <div class="input-group">
               <input type="email" placeholder="Email" name="email" required />
@@ -431,7 +426,7 @@ if ($conn->connect_error) {
             <button type="submit" value="Cadastrar">Cadastrar</button>
             <p>
               <span> ja possui conta? </span>
-              <b onclick="toggle()" class="pointer"> Cadastre-se aqui </b>
+              <b onclick="toggle()" class="pointer"> entre aqui </b>
             </p>
           </form>
 
@@ -442,7 +437,7 @@ if ($conn->connect_error) {
               const confirmarSenha = document.querySelector('input[name="confirm_password"]').value;
 
               if (senha !== confirmarSenha) {
-                event.preventDefault(); // Impede o envio do formulário
+                event.preventDefault();
                 alert("As senhas não coincidem. Por favor, tente novamente.");
               }
             });
@@ -464,7 +459,7 @@ if ($conn->connect_error) {
             </div>
             <a href="index.php"><button type="submit" value="entrar">entrar</button></a>
             <p>
-              <b> Esqueçeu a senha? </b>
+              <a href="senha.php"> Esqueçeu a senha? </a>
             </p>
             <p>
               <span> Não possui conta? </span>

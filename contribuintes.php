@@ -570,7 +570,7 @@ area de teste
               oque fez: Remodelação de design
             </p>
             <p>
-              email: <strong> Sthefanyoliveira20@etec.sp.gv.br</strong>
+              email: <strong> Sthefany.oliveira20@etec.sp.gv.br</strong>
             </p>
             <p>
               onde moro: Guaratinguetá SP Brasil
@@ -579,12 +579,11 @@ area de teste
               formação academica:
             <p><strong>Etec Prof° Alfredo de barros Santos</strong><br>Desenvolvimento de sistemas</p>
             </p>
-            <p>hobbies: Dançar, cantar, Estetica, conversar</p>
+            <p>hobbies: Dançar, Cantar, Estetica</p>
             <p>
               redes sociais
             </p>
-            <p>As memórias são coisas que nem a morte pode matar. Elas me moldaram para ser quem sou hoje e construíram
-              as relações que tenho na minha vida.</p>
+            <p>A arte é a expressão mais pura da alma, onde sentimentos ganham forma e cores.</p>
             <p class="card-text">
               <small class="text-body-secondary">17 anos</small>
             </p>
@@ -598,7 +597,7 @@ area de teste
         
         <div class="col-md-8">
           <div class="card-body">
-            <h2 class="card-title">lucas S. Balbi</h2>
+            <h2 class="card-title">Lucas S. Balbi</h2>
             <p class="card-text">
               oque fez: ajuda UI (User Interface) e UX (User Experiencie) e parte do banco de dados
             </p>
@@ -617,8 +616,8 @@ area de teste
             <p>
               redes sociais
             </p>
-            <p>Não importa as adversidades que encontre, mantenha sempre sua determinação</p>
-            <p class="card-text">
+            <p>E.</p>
+            <p>Ó mal habite em quanto há tempo de habitar, pois quem resides ainda de expurgará.</p>lass="card-text">
               <small class="text-body-secondary">16 anos</small>
             </p>
           </div>
@@ -635,7 +634,7 @@ area de teste
               O que fez: ajuda UI (User Interface) e UX (User Experiencie) e parte do banco de dados
             </p>
             <p>
-              email: <strong>miguel.queiroz@etec.sp.gov.br</strong>
+              email: <strong>miguel.faustino@etec.sp.gov.br</strong>
             </p>
             <p>
               onde moro: Aparecida SP Brasil
@@ -644,11 +643,11 @@ area de teste
               formação academica:
             <p><strong>Etec Prof° Alfredo de barros Santos</strong><br>Desenvolvimento de sistemas</p>
             </p>
-            <p>hobbies: programação, música, jogos e arte.</p>
+            <p>hobbies: programação, música, jogos e animações.</p>
             <p>
               redes sociais
             </p>
-            <p>Livros não mudam, o mundo eles só mudam as pessoas e as pessoas mudam o mundo.</p>
+            <p>Expansão de dominio: npm run reset-project.</p>
             <p class="card-text">
               <small class="text-body-secondary">Idade: 16 anos</small>
             </p>
@@ -661,12 +660,12 @@ area de teste
       <div class="row g-0">
         <div class="col-md-8">
           <div class="card-body">
-            <h2 class="card-title">luis Felipe</h2>
+            <h2 class="card-title">Luis Felipe</h2>
             <p class="card-text">
-              O que fez: ajuda UI (User Interface) e UX (User Experiencie) e parte do banco de dados
+              Responsabilidades: ajuda UI (User Interface) e UX (User Experiencie) e parte do banco de dados
             </p>
             <p>
-              email: <strong>luis.Felipe@etec.sp.gov.br</strong>
+              email: <strong>luis.galhardo@etec.sp.gov.br</strong>
             </p>
             <p>
               onde moro: Guaratinguetá SP Brasil
@@ -675,13 +674,14 @@ area de teste
               formação academica:
             <p><strong>Etec Prof° Alfredo de barros Santos</strong><br>Desenvolvimento de sistemas</p>
             </p>
-            <p>hobbies: programação, música, jogos e arte</p>
+            <p>hobbies: música, jogos, arte, leitura e espiritualidade</p>
             <p>
               redes sociais
             </p>
-            <p>Livros não mudam, o mundo eles só mudam as pessoas e as pessoas mudam o mundo.</p>
+            <p>"Eu vos dou um novo mandamento, amai-vos uns aos outros. Como eu vos amei assim também vós deveis amar-vos
+              uns aos outros" - João 13,34</p>
             <p class="card-text">
-              <small class="text-body-secondary">Idade: 16 anos</small>
+              <small class="text-body-secondary">Idade: 17 anos</small>
             </p>
           </div>
         </div>
