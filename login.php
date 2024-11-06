@@ -1,4 +1,5 @@
 <?php
+session_start();
 $servername = "br612.hostgator.com.br";
 $username = "hubsap45_usrordserv";
 $password = "j@j!1502";
@@ -391,14 +392,14 @@ if ($conn->connect_error) {
             </div>
             <div class="input-group d-flex" style="gap: 16px">
               <div style="flex: 1" class="inputInline">
-                <input type="text" placeholder="CPF" name="CPF" required />
+                <input type="text" placeholder="CPF" name="CPF" maxlength="" re/>
               </div>
               <div style="flex: 1" class="inputInline">
                 <input type="text" placeholder="RG" name="RG" required />
               </div>
             </div>
             <div class="input-group">
-              <input type="text" placeholder="Telefone" name="Telefone" required />
+              <input type="text" placeholder="Telefone" name="Telefone" maxlength="11" required />
             </div>
             <div class="input-group">
               <select name="cidade" id="cidade" required>
@@ -425,7 +426,7 @@ if ($conn->connect_error) {
             <button type="submit" value="Cadastrar">Cadastrar</button>
             <p>
               <span> ja possui conta? </span>
-              <b onclick="toggle()" class="pointer"> Cadastre-se aqui </b>
+              <b onclick="toggle()" class="pointer"> entre aqui </b>
             </p>
           </form>
 
@@ -436,7 +437,7 @@ if ($conn->connect_error) {
               const confirmarSenha = document.querySelector('input[name="confirm_password"]').value;
 
               if (senha !== confirmarSenha) {
-                event.preventDefault(); // Impede o envio do formulário
+                event.preventDefault();
                 alert("As senhas não coincidem. Por favor, tente novamente.");
               }
             });
@@ -448,7 +449,7 @@ if ($conn->connect_error) {
         <div class="form-wrapper align-items-center ajusteMargin">
           <form class="form sign-in" action="dados.php" method="post">
             <div class="input-group">
-              <input type="text" placeholder="nome" id="nome" name="nome" required />
+              <input type="text" placeholder="Nome de usuário" id="nome" name="nome" required />
             </div>
             <div class="input-group">
               <input type="text" placeholder="Email" id="Email" name="Email" required />
@@ -456,9 +457,9 @@ if ($conn->connect_error) {
             <div class="input-group">
               <input type="password" placeholder="senha" id="password" name="password" required />
             </div>
-            <a href="index.php"><button type="submit" value="entrar">entrar</button></a>
+            <a href="verificar.php"><button type="submit" value="entrar">entrar</button></a>
             <p>
-              <b> Esqueçeu a senha? </b>
+              <a href="senha.php"> Esqueçeu a senha? </a>
             </p>
             <p>
               <span> Não possui conta? </span>

@@ -22,10 +22,9 @@ $_SESSION['emailUsuario'] = $_SESSION['emailUSR'];
   <title>OS Connect</title>
 
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-  <link href="fontawesome/css/all.min.css" rel="stylesheet" />
-  <link href="css/responsive.css" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/styleSobre.css">
-  <link rel="stylesheet" href="css/style.css">
+    <link href="fontawesome/css/all.min.css" rel="stylesheet" />
+    <link href="css/responsive.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   
 
 
@@ -33,7 +32,11 @@ $_SESSION['emailUsuario'] = $_SESSION['emailUSR'];
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
 
-  <style>
+  <style> 
+.logo{
+    width: 100%;
+  }
+
     @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
 
     body {
@@ -115,255 +118,7 @@ $_SESSION['emailUsuario'] = $_SESSION['emailUSR'];
       box-shadow: none;
     }
 
-    /*header section*/
-    .hero_area {
-      position: relative;
-      min-height: 80vh;
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-      flex-direction: column;
-      background-color: #0a2946;
-      border-radius: 0 0 350px 0;
-    }
 
-    .sub_page .hero_area {
-      min-height: auto;
-      border-radius: 0 0 45px 0;
-    }
-
-    .header_section {
-      padding: 5px 0;
-      display: flex;
-      position: fixed;
-      width: 100%;
-      background-color: #0a2946;
-      z-index: 1000;
-
-    }
-
-    .header_section .container-fluid {
-      display: flex;
-      padding-right: 25px;
-      padding-left: 25px;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .navbar-brand span {
-      font-weight: bold;
-      color: #ffffff;
-      font-size: 24px;
-    }
-
-    .custom_nav-container {
-      padding: 0;
-      border-bottom: solid 2px rgb(255, 255, 255);
-      width: 90%;
-      padding-bottom: 10px;
-      display: contents;
-    }
-
-    .custom_nav-container .navbar-nav {
-      margin: auto;
-    }
-
-    .nav-item {
-      margin: 0 2rem 0 2rem;
-    }
-
-    .custom_nav-container .navbar-nav .nav-item .nav-link {
-      padding: 5px 25px;
-      color: #ffffff;
-      text-align: center;
-      text-transform: uppercase;
-      border-radius: 5px;
-      -webkit-transition: all 0.3s;
-      transition: all 0.3s;
-    }
-
-    .custom_nav-container .navbar-nav .nav-item:hover .nav-link,
-    .custom_nav-container .navbar-nav .nav-item.active .nav-link {
-      color: #000000;
-      background-color: #ffffff;
-    }
-
-    .custom_nav-container .navbar-toggler {
-      outline: none;
-    }
-
-    .custom_nav-container .navbar-toggler {
-      padding: 0;
-      width: 37px;
-      height: 42px;
-      -webkit-transition: all 0.3s;
-      transition: all 0.3s;
-    }
-
-    .custom_nav-container .navbar-toggler span {
-      display: block;
-      width: 35px;
-      height: 4px;
-      background-color: #ffffff;
-      margin: 7px 0;
-      -webkit-transition: all 0.3s;
-      transition: all 0.3s;
-      position: relative;
-      border-radius: 5px;
-      transition: all 0.3s;
-    }
-
-    .custom_nav-container .navbar-toggler span::before,
-    .custom_nav-container .navbar-toggler span::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      background-color: #ffffff;
-      top: -10px;
-      border-radius: 5px;
-      -webkit-transition: all 0.3s;
-      transition: all 0.3s;
-    }
-
-    .custom_nav-container .navbar-toggler span::after {
-      top: 10px;
-    }
-
-    .custom_nav-container .navbar-toggler[aria-expanded="true"] {
-      -webkit-transform: rotate(360deg);
-      transform: rotate(360deg);
-    }
-
-    .custom_nav-container .navbar-toggler[aria-expanded="true"] span {
-      -webkit-transform: rotate(45deg);
-      transform: rotate(45deg);
-    }
-
-    .custom_nav-container .navbar-toggler[aria-expanded="true"] span::before,
-    .custom_nav-container .navbar-toggler[aria-expanded="true"] span::after {
-      -webkit-transform: rotate(90deg);
-      transform: rotate(90deg);
-      top: 0;
-    }
-
-    .custom_nav-container .navbar-toggler[aria-expanded="true"] .s-1 {
-      -webkit-transform: rotate(45deg);
-      transform: rotate(45deg);
-      margin: 0;
-      margin-bottom: -4px;
-    }
-
-    .custom_nav-container .navbar-toggler[aria-expanded="true"] .s-2 {
-      display: none;
-    }
-
-    .custom_nav-container .navbar-toggler[aria-expanded="true"] .s-3 {
-      -webkit-transform: rotate(-45deg);
-      transform: rotate(-45deg);
-      margin: 0;
-      margin-top: -4px;
-    }
-
-    .custom_nav-container .navbar-toggler[aria-expanded="false"] .s-1,
-    .custom_nav-container .navbar-toggler[aria-expanded="false"] .s-2,
-    .custom_nav-container .navbar-toggler[aria-expanded="false"] .s-3 {
-      -webkit-transform: none;
-      transform: none;
-    }
-
-    .quote_btn-container {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      align-items: center;
-    }
-
-
-    .quote_btn-container a {
-      color: #000000;
-      text-transform: uppercase;
-    }
-
-    .quote_btn-container a span {
-      margin-left: 5px;
-    }
-
-    .quote_btn-container a:hover {
-      color: #3498db;
-    }
-
-    .quote_btn-container .quote_btn {
-      display: inline-block;
-      padding: 5px 25px;
-      background-color: #3498db;
-      color: #ffffff;
-      border-radius: 5px;
-      -webkit-transition: all 0.3s;
-      transition: all 0.3s;
-      border: 1px solid #3498db;
-    }
-
-    .quote_btn-container .quote_btn:hover {
-      color: #ffffff;
-      -webkit-transform: translateY(-3px);
-      transform: translateY(-3px);
-    }
-
-
-    .logo {
-      width: 50%;
-      height: 100%;
-    }
-
-    @media screen and (max-width: 682px) {
-      .navbar-collapse {
-        width: 100%;
-        text-align: center;
-      }
-
-      .navbar-nav {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-      }
-
-      .nav-item {
-        display: block;
-        margin: 5px 0;
-      }
-
-      /* Garante que o menu apareça logo abaixo do header */
-      .navbar-collapse {
-        position: absolute;
-        top: 99%;
-        left: 0;
-        background-color: #0a2946;
-        /* Ajuste a cor de fundo conforme o design */
-        z-index: 999;
-        padding-bottom: 1rem;
-      }
-
-      /* Garante que o header permaneça fixo no topo */
-      .header_section {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        z-index: 1000;
-      }
-
-      .quote_btn-container {
-        text-align: center;
-        margin-top: 15px;
-        display: contents;
-      }
-    }
 
     /*
 
@@ -401,7 +156,7 @@ area de teste
 
     .card {
       width: 80%;
-      height: 100%;
+      height: 30rem;
       box-shadow: 2px 2px 0px 0px black;
       background-color: #ffffff;
       border-radius: 5px;
@@ -415,7 +170,7 @@ area de teste
     .card:hover {
       box-shadow: 0px 0px 0px 0px black;
       width: 85%;
-      height: 105%;
+      height: 31rem;
       transition: ease-in-out 0.5s;
     }
 
@@ -486,6 +241,58 @@ area de teste
             text-shadow: -10ch 0 0 #000, 0 0 0 #000
         }
     }
+    .tm-main{
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: center;
+ }
+
+ .col-md-4 img {
+  width: 100%;          /* A largura da imagem será sempre 100% do contêiner */
+  height: 100%;         /* A altura ocupará 100% do contêiner */
+  object-fit: cover;     /* A imagem será cortada para cobrir todo o contêiner sem distorção */
+}
+
+.col-md-4 {
+  height: auto;          /* Deixe a altura automática para telas pequenas */
+}
+
+@media screen and (max-width: 768px) {
+  .col-md-4 img {
+    object-fit: contain; /* Em telas menores, a imagem será contida dentro do contêiner */
+  }
+}
+
+.margin{
+  margin: 2rem 0;
+  text-align: center;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+  }
+
+  .container {
+    text-align: center;
+  }
+
+  .footer-line {
+    width: 100%;
+    background-color: #0a2946;
+    height: 0.1px;
+  }
+
+  @media screen and (max-width: 992px) {
+    footer {
+      font-size: 15px;
+      display: flex;
+      justify-content: center;
+    }
+  }
 </style>
 </head>
 
@@ -507,53 +314,15 @@ area de teste
       document.getElementById("loading").style.display = "none";
     };
   </script>
-  <header class="header_section">
-    <div class="container-fluid">
-      <nav class="navbar navbar-expand-lg custom_nav-container ">
-        <a class="navbar-brand" href="index.php">
-          <img class="logo" src="img/logo.png" alt="logo">
-        </a>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+  <?php require_once('php/header.php')?>
 
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav  ">
-            <li class="nav-item ">
-              <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item ">
-              <a class="nav-link" href="sobre.php"> Sobre</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="history.php">Historico</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contato.php">Contate-nos</a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="contribuintes.php">contribuintes</a>
-              </li>
-          </ul>
-          <div class="quote_btn-container">
-            <a href="perfil.php" class="quote_btn">
-              <i class="icone bi bi-person-circle" style="font-size: 30px; margin: 0 2% 0 0; "></i>
-              <?php echo $_SESSION['nomeUSR'] ?>
-            </a>
-          </div>
-        </div>
-      </nav>
-    </div>
-  </header>
   <main class="tm-main">
 
-    <div class="row tm-row tm-mb-40">
+    <div class="row tm-row tm-mb-40 margin">
       <div class="col-12">
         <div class="mb-4">
-          <h1>contribuintes</h1>
+          <h1>Contribuintes</h1>
           <p>
             Tela dedicada aos contribuintes do projeto os connect
           </p>
@@ -563,14 +332,17 @@ area de teste
 
     <div class="card mb-3" style="margin-bottom: 100px;">
       <div class="row g-0">
+      <div class="col-md-4">
+      <img class="img-fluid" src="img/con_teffy.jpg" alt="">
+    </div>
         <div class="col-md-8">
           <div class="card-body">
             <h2 class="card-title">Sthefany Oliveira</h2>
             <p class="card-text">
-              oque fez: Remodelação de design
+              Responsabilidades: Remodelação de design
             </p>
             <p>
-              email: <strong> Sthefanyoliveira20@etec.sp.gv.br</strong>
+              email: <strong> Sthefany.oliveira20@etec.sp.gv.br</strong>
             </p>
             <p>
               onde moro: Guaratinguetá SP Brasil
@@ -579,12 +351,9 @@ area de teste
               formação academica:
             <p><strong>Etec Prof° Alfredo de barros Santos</strong><br>Desenvolvimento de sistemas</p>
             </p>
-            <p>hobbies: Dançar, cantar, Estetica, conversar</p>
-            <p>
-              redes sociais
-            </p>
-            <p>As memórias são coisas que nem a morte pode matar. Elas me moldaram para ser quem sou hoje e construíram
-              as relações que tenho na minha vida.</p>
+            <p>hobbies: Dançar, Cantar, Estetica</p>
+            
+            <p>"A arte é a expressão mais pura da alma, onde sentimentos ganham forma e cores."</p>
             <p class="card-text">
               <small class="text-body-secondary">17 anos</small>
             </p>
@@ -595,12 +364,14 @@ area de teste
 
     <div class="card mb-3">
       <div class="row g-0">
-        
+      <div class="col-md-4">
+          <img class="img-fluid" src="img/con_balbi.jpg" alt="">
+        </div>
         <div class="col-md-8">
           <div class="card-body">
-            <h2 class="card-title">lucas S. Balbi</h2>
+            <h2 class="card-title">Lucas S. Balbi</h2>
             <p class="card-text">
-              oque fez: ajuda UI (User Interface) e UX (User Experiencie) e parte do banco de dados
+              Responsabilidades: ajuda UI (User Interface) e UX (User Experiencie) e parte do banco de dados
             </p>
             <p>
               email: <strong> lucas.balbi@etec.sp.gob.br</strong>
@@ -614,11 +385,8 @@ area de teste
             </p>
             <p>hobbies: programação, música, jogos e arte.
             </p>
-            <p>
-              redes sociais
-            </p>
-            <p>Não importa as adversidades que encontre, mantenha sempre sua determinação</p>
-            <p class="card-text">
+
+            <p>"Ó mal habite em quanto há tempo de habitar, pois quem resides ainda de expurgará."</p>
               <small class="text-body-secondary">16 anos</small>
             </p>
           </div>
@@ -628,14 +396,17 @@ area de teste
 
     <div class="card mb-3">
       <div class="row g-0">
+        <div class="col-md-4">
+          <img class="img-fluid" src="img/con_queiroz.jpg" alt="">
+        </div>
         <div class="col-md-8">
           <div class="card-body">
             <h2 class="card-title">Miguel Queiroz</h2>
             <p class="card-text">
-              O que fez: ajuda UI (User Interface) e UX (User Experiencie) e parte do banco de dados
+              Responsabilidades: ajuda UI (User Interface) e UX (User Experiencie) e parte do banco de dados
             </p>
             <p>
-              email: <strong>miguel.queiroz@etec.sp.gov.br</strong>
+              email: <strong>miguel.faustino@etec.sp.gov.br</strong>
             </p>
             <p>
               onde moro: Aparecida SP Brasil
@@ -644,11 +415,9 @@ area de teste
               formação academica:
             <p><strong>Etec Prof° Alfredo de barros Santos</strong><br>Desenvolvimento de sistemas</p>
             </p>
-            <p>hobbies: programação, música, jogos e arte.</p>
-            <p>
-              redes sociais
-            </p>
-            <p>Livros não mudam, o mundo eles só mudam as pessoas e as pessoas mudam o mundo.</p>
+            <p>hobbies: programação, música, jogos e animações.</p>
+            
+            <p>"Expansão de dominio: npm run reset-project."</p>
             <p class="card-text">
               <small class="text-body-secondary">Idade: 16 anos</small>
             </p>
@@ -659,14 +428,17 @@ area de teste
 
     <div class="card mb-3">
       <div class="row g-0">
+      <div class="col-md-4">
+      <img class="img-fluid" src="img/con_galhardo.jpg" alt="">
+    </div>
         <div class="col-md-8">
           <div class="card-body">
-            <h2 class="card-title">luis Felipe</h2>
+            <h2 class="card-title">Luis Felipe</h2>
             <p class="card-text">
-              O que fez: ajuda UI (User Interface) e UX (User Experiencie) e parte do banco de dados
+              Responsabilidades: ajuda UI (User Interface) e UX (User Experiencie) e parte do banco de dados
             </p>
             <p>
-              email: <strong>luis.Felipe@etec.sp.gov.br</strong>
+              email: <strong>luis.galhardo@etec.sp.gov.br</strong>
             </p>
             <p>
               onde moro: Guaratinguetá SP Brasil
@@ -675,14 +447,43 @@ area de teste
               formação academica:
             <p><strong>Etec Prof° Alfredo de barros Santos</strong><br>Desenvolvimento de sistemas</p>
             </p>
-            <p>hobbies: programação, música, jogos e arte</p>
-            <p>
-              redes sociais
-            </p>
-            <p>Livros não mudam, o mundo eles só mudam as pessoas e as pessoas mudam o mundo.</p>
+            <p>hobbies: música, jogos, arte, leitura e espiritualidade</p>
+            
+            <p>"Eu vos dou um novo mandamento, amai-vos uns aos outros. Como eu vos amei assim também vós deveis amar-vos
+              uns aos outros" - João 13,34</p>
             <p class="card-text">
-              <small class="text-body-secondary">Idade: 16 anos</small>
+              <small class="text-body-secondary">Idade: 17 anos</small>
             </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card mb-3">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="img/about-03.jpg" class="img-fluid" alt="">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h2 class="card-title">Ana luiza</h2>
+            <p class="card-text">
+              Responsabilidades: responsável pelo design do site.
+            </p>
+            <p>
+              email: <strong>ana.pedrosa01@etec.sp.gov.br</strong>
+            </p>
+            <p>
+              onde moro: Guaratinguetá SP Brasil
+            </p>
+            <p>
+              formação academica:
+            <p><strong>Etec Prof° Alfredo de barros Santos</strong><br>Desenvolvimento de sistemas</p>
+            </p>
+            <p>hobbies: ler, escrever, desenhar.</p>
+
+            <p>"Livros não mudam, o mundo eles só mudam as pessoas e as pessoas mudam o mundo."</p>
+
           </div>
         </div>
       </div>
@@ -690,11 +491,13 @@ area de teste
 
 
   </main>
-  <footer class="">
-    <hr class="col-12" />
-    <div class="col-md-6 col-12 tm-color-gray"></div>
-    <div class="col-md-6 col-12 tm-color-gray tm-copyright">
-      Copyright 2024 OSConnect Ltd.
+  <footer class="footer_section">
+    <div class="container">
+      <hr class="footer-line" />
+      <p>
+        &copy; <span id="displayYear"></span> todos os direitos reservados a
+        <a href="index.phps-">OSConnect</a>
+      </p>
     </div>
   </footer>
 </body>

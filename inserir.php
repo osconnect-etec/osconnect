@@ -1,7 +1,5 @@
 <?php
-
 session_start();
-
 
 $servername = "br612.hostgator.com.br";
 $username = "hubsap45_usrordserv";
@@ -22,7 +20,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $Telefone = filter_input(INPUT_POST, 'Telefone', FILTER_SANITIZE_STRING);
     $cidade_id = filter_input(INPUT_POST, 'cidade', FILTER_VALIDATE_INT);
     $senha = $_POST["password"];
+    $confirmar_senha = $_POST["confirm_password"];
 
+    if ($senha !== $confirmar_senha) {
+        die("As senhas não coincidem. Tente novamente.");
+    }
+
+    $senha_hash = password_hash($senha, PASSWORD_DEFAULT);
 
     if (!empty($cidade_id)) {
         $sql = "SELECT CidNome FROM tblCidade WHERE id = ?";
@@ -32,8 +36,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $result = $stmt->get_result();
 
         if ($result->num_rows > 0) {
-            $row = $result->fetch_assoc();
-            header("Location: login.php");
+            // Inserir o novo usuário
+            $stmt = $conn->prepare("INSERT INTO tblCliente (cliNome, cliEmail, cliPassword, cliCPF, cliRG, cliTelefone, cliCidade) VALUES (?, ?, ?, ?, ?, ?, ?)");
+            if (!$stmt) {
+                error_log("Erro na preparação da consulta: " . $conn->error);
+                die("Erro ao processar a solicitação.");
+            }
+
+            $stmt->bind_param("sssissi", $nome, $email, $senha_hash, $CPF, $RG, $Telefone, $cidade_id);
+            if ($stmt->execute()) {
+                // Inserir um registro na tabela de relatórios
+                $relatorioTipo = "Novo Usuário Adicionado";
+                $dados = "Usuário: $nome, E-mail: $email, CPF: $CPF";
+                
+                $stmtRelatorio = $conn->prepare("INSERT INTO tblRelatorios (relatorioTipo, dados) VALUES (?, ?)");
+                $stmtRelatorio->bind_param("ss", $relatorioTipo, $dados);
+                $stmtRelatorio->execute();
+                $stmtRelatorio->close();
+
+                header("Location: login.php");
+            } else {
+                error_log("Erro ao inserir registro: " . $stmt->error);
+                echo "Erro ao inserir registro.";
+            }
         } else {
             echo "Cidade não encontrada.";
         }
@@ -41,30 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Nenhuma cidade foi selecionada.";
     }
 
-    $senha = $_POST["password"];
-    $confirmar_senha = $_POST["confirm_password"];
-
-    if ($senha !== $confirmar_senha) {
-        die("As senhas não coincidem. Tente novamente.");
-    }
-
-    $senha_hash = password_hash($senha, PASSWORD_DEFAULT);
-
-    $stmt = $conn->prepare("INSERT INTO tblCliente (cliNome, cliEmail, cliPassword, cliCPF, cliRG, cliTelefone, cliCidade) VALUES (?, ?, ?, ?, ?, ?, ?)");
-    if (!$stmt) {
-        error_log("Erro na preparação da consulta: " . $conn->error);
-        die("Erro ao processar a solicitação.");
-    }
-
-    $stmt->bind_param("sssissi", $nome, $email, $senha_hash, $CPF, $RG, $Telefone, $cidade_id);
-    if ($stmt->execute()) {
-        header("Location: login.php");
-    } else {
-        error_log("Erro ao inserir registro: " . $stmt->error);
-        echo "Erro ao inserir registro.";
-    }
-
-     $stmt->close();
-    $conn->close();
+    $stmt->close();
 }
+$conn->close();
 ?>

@@ -1,9 +1,14 @@
 <?php
-
+/*Não Mexer nessa poha*/
 session_start();
 $_SESSION['nomeUsuario'] = $_SESSION['nomeUSR'];
 $_SESSION['emailUsuario'] = $_SESSION['emailUSR'];
 
+if (empty($_SESSION['nomeUSR'])) {
+  echo "Usuário não está logado ou sessão inválida.";
+  var_dump($_SESSION);  // Mostra todas as variáveis de sessão
+  exit;
+}
 ?>
 
 <!DOCTYPE html>
@@ -13,11 +18,11 @@ $_SESSION['emailUsuario'] = $_SESSION['emailUSR'];
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-
   <meta name="keywords" content="" />
-  <meta name="description" content="" />
+  <meta name="description" content="O Projeto O.S Connect é uma plataforma inovadora que facilita a comunicação entre clientes e prestadores de
+  serviços, oferecendo um gerenciamento eficiente e seguro. Com uma interface intuitiva, permite registrar,
+  acompanhar e avaliar serviços, desde o agendamento até o feedback pós-atendimento." />
   <meta name="author" content="" />
 
   <title>OS Connect</title>
@@ -30,6 +35,11 @@ $_SESSION['emailUsuario'] = $_SESSION['emailUSR'];
 </head>
 
 <style>
+
+  
+.logo{
+    width: 50%;
+  }
   @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
 
   body {
@@ -97,6 +107,7 @@ $_SESSION['emailUsuario'] = $_SESSION['emailUSR'];
   a:hover,
   a:focus {
     text-decoration: none;
+    color: #000;
   }
 
   a:hover,
@@ -111,263 +122,6 @@ $_SESSION['emailUsuario'] = $_SESSION['emailUSR'];
     box-shadow: none;
   }
 
-  /*header section*/
-  .logo {
-    width: 50%;
-    height: 100%;
-  }
-
-  @media screen and (max-width: 682px) {
-    .navbar-collapse {
-      width: 100%;
-      text-align: center;
-    }
-
-    .navbar-nav {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-    }
-
-    .nav-item {
-      display: block;
-      margin: 5px 0;
-    }
-
-    /* Garante que o menu apareça logo abaixo do header */
-    .navbar-collapse {
-      position: absolute;
-      top: 99%;
-      left: 0;
-      background-color: #0a2946;
-      /* Ajuste a cor de fundo conforme o design */
-      z-index: 999;
-      padding-bottom: 1rem;
-    }
-
-    /* Garante que o header permaneça fixo no topo */
-    .header_section {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
-    }
-
-    .quote_btn-container {
-      text-align: center;
-      margin-top: 15px;
-      display: contents;
-    }
-  }
-
-
-  .hero_area {
-    position: relative;
-    min-height: 80vh;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    background-color: #0a2946;
-    border-radius: 0 0 350px 0;
-  }
-
-  .sub_page .hero_area {
-    min-height: auto;
-    border-radius: 0 0 45px 0;
-  }
-
-  .header_section {
-    padding: 5px 0;
-    display: flex;
-    position: fixed;
-    width: 100%;
-    background-color: #0a2946;
-    z-index: 1000;
-
-  }
-
-  .header_section .container-fluid {
-    display: flex;
-    padding-right: 25px;
-    padding-left: 25px;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .navbar-brand span {
-    font-weight: bold;
-    color: #ffffff;
-    font-size: 24px;
-  }
-
-  .custom_nav-container {
-    padding: 0;
-    border-bottom: solid 2px rgb(255, 255, 255);
-    width: 90%;
-    padding-bottom: 10px;
-    display: contents;
-  }
-
-  .custom_nav-container .navbar-nav {
-    margin: auto;
-  }
-
-  .nav-item {
-    margin: 0 2rem 0 2rem;
-  }
-
-  .custom_nav-container .navbar-nav .nav-item .nav-link {
-    padding: 5px 25px;
-    color: #ffffff;
-    text-align: center;
-    text-transform: uppercase;
-    border-radius: 5px;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
-  }
-
-  .custom_nav-container .navbar-nav .nav-item:hover .nav-link,
-  .custom_nav-container .navbar-nav .nav-item.active .nav-link {
-    color: #000000;
-    background-color: #ffffff;
-  }
-
-  .custom_nav-container .navbar-toggler {
-    outline: none;
-  }
-
-  .custom_nav-container .navbar-toggler {
-    padding: 0;
-    width: 37px;
-    height: 42px;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
-  }
-
-  .custom_nav-container .navbar-toggler span {
-    display: block;
-    width: 35px;
-    height: 4px;
-    background-color: #ffffff;
-    margin: 7px 0;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
-    position: relative;
-    border-radius: 5px;
-    transition: all 0.3s;
-  }
-
-  .custom_nav-container .navbar-toggler span::before,
-  .custom_nav-container .navbar-toggler span::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: #ffffff;
-    top: -10px;
-    border-radius: 5px;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
-  }
-
-  .custom_nav-container .navbar-toggler span::after {
-    top: 10px;
-  }
-
-  .custom_nav-container .navbar-toggler[aria-expanded="true"] {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-
-  .custom_nav-container .navbar-toggler[aria-expanded="true"] span {
-    -webkit-transform: rotate(45deg);
-    transform: rotate(45deg);
-  }
-
-  .custom_nav-container .navbar-toggler[aria-expanded="true"] span::before,
-  .custom_nav-container .navbar-toggler[aria-expanded="true"] span::after {
-    -webkit-transform: rotate(90deg);
-    transform: rotate(90deg);
-    top: 0;
-  }
-
-  .custom_nav-container .navbar-toggler[aria-expanded="true"] .s-1 {
-    -webkit-transform: rotate(45deg);
-    transform: rotate(45deg);
-    margin: 0;
-    margin-bottom: -4px;
-  }
-
-  .custom_nav-container .navbar-toggler[aria-expanded="true"] .s-2 {
-    display: none;
-  }
-
-  .custom_nav-container .navbar-toggler[aria-expanded="true"] .s-3 {
-    -webkit-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-    margin: 0;
-    margin-top: -4px;
-  }
-
-  .custom_nav-container .navbar-toggler[aria-expanded="false"] .s-1,
-  .custom_nav-container .navbar-toggler[aria-expanded="false"] .s-2,
-  .custom_nav-container .navbar-toggler[aria-expanded="false"] .s-3 {
-    -webkit-transform: none;
-    transform: none;
-  }
-
-  .quote_btn-container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    justify-content: center;
-  }
-
-
-
-
-  .quote_btn-container a {
-    color: #000000;
-    text-transform: uppercase;
-  }
-
-  .quote_btn-container a span {
-    margin-left: 5px;
-  }
-
-  .quote_btn-container a:hover {
-    color: #3498db;
-  }
-
-  .quote_btn-container .quote_btn {
-    display: inline-block;
-    padding: 5px 25px;
-    background-color: none;
-    color: #ffffff;
-    border-radius: 5px;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
-    border: 1px solid #3498db;
-  }
-
-
-  .quote_btn-container .quote_btn:hover {
-    background-color: #3498db;
-    color: #ffffff;
-    -webkit-transform: translateY(-3px);
-    transform: translateY(-3px);
-  }
-
-
-  /*end header section*/
   /* slider section */
   .slider_section {
     -webkit-box-flex: 1;
@@ -673,10 +427,12 @@ $_SESSION['emailUsuario'] = $_SESSION['emailUSR'];
 
   .case_section .box .detail-box {
     padding: 25px;
+    text-decoration: none;
   }
 
   .case_section .box .detail-box h5 {
     font-weight: bold;
+    text-decoration: none;
   }
 
   .case_section .box .detail-box p {
@@ -684,7 +440,7 @@ $_SESSION['emailUsuario'] = $_SESSION['emailUSR'];
   }
 
   .case_section .box .detail-box a {
-    color: #7335b7;
+    color: #000;
   }
 
   .client_section .box {
@@ -1041,6 +797,19 @@ $_SESSION['emailUsuario'] = $_SESSION['emailUSR'];
             text-shadow: -10ch 0 0 #000, 0 0 0 #000
         }
     }
+
+    .devlogs:hover{
+
+      transform: scale(0.95);
+      transition: ease-in-out 0.5s;
+      
+    }
+
+    .devlogs{
+      transition: ease-in-out 0.5s;
+      text-decoration: none;
+    }
+
 </style>
 </head>
 
@@ -1056,48 +825,8 @@ $_SESSION['emailUsuario'] = $_SESSION['emailUSR'];
     };
   </script>
   <div class="hero_area">
-    <header class="header_section">
-      <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg custom_nav-container ">
-          <a class="navbar-brand" href="index.php">
-            <img class="logo" src="img/logo.png" alt="logo">
-          </a>
-
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav  ">
-              <li class="nav-item active">
-                <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="sobre.php"> Sobre</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="history.php">Historico</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="contato.php">Contate-nos</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="contribuintes.php">contribuintes</a>
-              </li>
-            </ul>
-            <div class="quote_btn-container">
-              <a href="perfil.php" class="quote_btn">
-                <i class="icone bi bi-person-circle" style="font-size: 30px; margin: 0 2% 0 0; "></i>
-                <?php echo $_SESSION['nomeUSR'] ?>
-
-              </a>
-            </div>
-          </div>
-        </nav>
-      </div>
-    </header>
+    
+    <?php require_once('php/header.php')?>
 
     <section class="slider_section ">
       <div id="customCarousel1" class="carousel slide" data-ride="carousel">
@@ -1154,7 +883,7 @@ $_SESSION['emailUsuario'] = $_SESSION['emailUSR'];
               <div class="row">
                 <div class="col-md-6">
                   <div class="img-box">
-                    <video src="img/segurança.mp4" alt="" autoplay loop>
+                    <video src="img/computador.mp4" alt="" autoplay loop>
                   </div>
                 </div>
                 <div class="col-md-6">
@@ -1315,20 +1044,23 @@ $_SESSION['emailUsuario'] = $_SESSION['emailUSR'];
           </div>
         </div>
         <div class="col-md-6">
-          <div class="box">
+          <div class="box devlogs">
+          <a href="devlog.php">
             <div class="img-box">
               <img src="img/indexImg2.jpg" alt="">
             </div>
             <div class="detail-box">
-              <h5>
-                Novas Atualizações
-              </h5>
-              <p>
-                Sempre buscamos o conforto e acessibilidade de nossos usuários, com isso,
-                estaremos sempre atualizando o site para ser cada vez melhor para todos.
-              </p>
+              
+                <h5>
+                  Novas Atualizações
+                </h5>
+                <p>
+                  Sempre buscamos o conforto e acessibilidade de nossos usuários, com isso,
+                  estaremos sempre atualizando o site para ser cada vez melhor para todos.
+                </p>
 
             </div>
+          </a>
           </div>
         </div>
       </div>
@@ -1366,11 +1098,11 @@ $_SESSION['emailUsuario'] = $_SESSION['emailUSR'];
           </div>
           <div class="col-md-6 col-lg-3 ">
             <h4>
-              Entre
+              Contate-nos!
             </h4>
             <form action="#">
-              <button type="submit">
-                Entrar
+              <button>
+                Mensagem
               </button>
             </form>
           </div>
@@ -1413,6 +1145,8 @@ $_SESSION['emailUsuario'] = $_SESSION['emailUSR'];
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
     integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
     </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
   <script src="js/bootstrap.js"></script>
   <script src="js/custom.js"></script>
 
